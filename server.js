@@ -2,6 +2,7 @@
 const express = require('express');
 // require Movie model
 const Movie = require('./models/Movie');
+const Favorite = require('./models/Favorite');
 // Create a new Express application (web server)
 const app = express();
 
@@ -19,6 +20,21 @@ app.get('/movies.json', (request, response) => {
 
 app.get('/movies/:id.json', (request, response) => {
   Movie.find(request.params.id)
+  .then(data => {
+    response.json(data)
+  })
+})
+
+app.get('/favorites.json', (request, response) => {
+  Favorite.all()
+  .then(data => {
+    console.log(data);
+    response.json(data)
+  });
+});
+
+app.post('/favorites', (request, response) => {
+  Movie.create(favoriteMovie)
   .then(data => {
     response.json(data)
   })

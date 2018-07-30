@@ -31,13 +31,8 @@ class MoviePage extends Component {
 
       const favoriteMovie = {
         id: this.state.id,
-        actors: this.state.actors,
         genre: this.state.genre,
-        language: this.state.language,
-        plot: this.state.plot,
-        poster: this.state.poster,
         rated: this.state.rated,
-        released: this.state.released,
         runtime: this.state.runtime,
         title: this.state.title,
         year: this.state.year
@@ -45,17 +40,9 @@ class MoviePage extends Component {
 
       console.log(favoriteMovie);
 
-      fetch('/favorites', {
-        method: 'POST',
-        body: JSON.stringify(favoriteMovie),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }).then(response => response.json())
-      .then(favorite => {
-        this.setState({
-          saved: true
-        })
+      this.setState({
+        favoriteMovie: favoriteMovie,
+        created: true
       })
 
       this.setState(prevState => ({
