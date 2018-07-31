@@ -34,4 +34,4 @@
   - It uses a Component structure. Everything is broken down into components, allowing you to reuse them throughout the application.
   - it allows for fast view renders, updating without refreshing the entire page
 
-- Some of the challenges I have noticed with students learning React is the ability/inability to passwrap their heads around props and state.
+- Some of the challenges I have noticed with students learning React is the ability/inability to wrap their heads around passing props and state dwon from parent to child components.
