@@ -30,8 +30,8 @@
 
 - Some of the benefits to using the React frontend library include:
   
-  > It's a JavaScript framework
-  > It uses a Component structure. Everything is broken down into components, allowing you to reuse them throughout the application.
-  > it allows for fast view renders, updating without refreshing the entire page
+  - It's a JavaScript framework
+  - It uses a Component structure. Everything is broken down into components, allowing you to reuse them throughout the application.
+  - it allows for fast view renders, updating without refreshing the entire page
 
 - Some of the challenges I have noticed with students learning React is the ability/inability to passwrap their heads around props and state.
