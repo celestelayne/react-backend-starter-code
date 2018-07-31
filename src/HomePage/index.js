@@ -30,7 +30,7 @@ class HomePage extends Component {
 
     console.log(this.state.value)
 
-    let url =`http://www.omdbapi.com/?s=${this.state.value}&t=movie&apikey=4d9c54c4`;
+    let url =`http://www.omdbapi.com/?s=Troy&t=movie&apikey=4d9c54c4`;
 
     fetch(url).then(response => response.json())
     .then(movies => {

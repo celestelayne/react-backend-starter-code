@@ -56,7 +56,7 @@ class MoviePage extends Component {
     componentDidMount(){
       let id = this.props.location.state.movies.imdbID;
       // console.log(this.props.location.state.movies.imdbID)
-      let url =`http://www.omdbapi.com/?i=${id}&apikey=4d9c54c4`;
+      let url =`http://www.omdbapi.com/?s=Troy&t=movie&apikey=4d9c54c4`;
 
       fetch(url)
       .then(response => response.json())
