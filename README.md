@@ -22,4 +22,16 @@
 
 #### Bonus
 
-- Rewrite the application using a JavaScript MVC library. Include a readme that explains the benefits and any additional challenges students would face learning the library.
+- Link to the [node vanilla javascript movie finder](https://git.generalassemb.ly/layne/node-backend-movie-finder) repo
+
+- Rewrite the application using a JavaScript MVC library (This app was written using React/Express/SQL database). Include a readme that explains the benefits and any additional challenges students would face learning the library.
+
+#### Benefits
+
+- Some of the benefits to using the React frontend library include:
+  
+  > It's a JavaScript framework
+  > It uses a Component structure. Everything is broken down into components, allowing you to reuse them throughout the application.
+  > it allows for fast view renders, updating without refreshing the entire page
+
+- Some of the challenges I have noticed with students learning React is the ability/inability to passwrap their heads around props and state.
