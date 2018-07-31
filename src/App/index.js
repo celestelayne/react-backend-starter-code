@@ -11,10 +11,14 @@ class App extends Component {
   render() {
     return(
       <Router>
-        <div className="main-wrapper">
-          <nav className="navbar is-dark">
+        <div className="container">
+          <nav className="navbar is-transparent level">
+            <div className="navbar-brand level-left">
               <Link className="navbar-item" to="/">Movie Finder</Link>
+            </div>
+            <div id="navbarExampleTransparentExample" className="navbar-menu level-right is-hoverable">
               <Link className="navbar-item" to="/favorites">Favorite Movies</Link>
+            </div>
           </nav>
           <Route path="/" exact component={HomePage} />
           <Route path="/movies/:id" exact component={MoviePage} />

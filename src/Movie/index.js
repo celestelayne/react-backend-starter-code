@@ -14,13 +14,13 @@ class Movie extends Component {
 
   render() {
     let movies = this.props.data;
-    // console.log('in here:', this.props);
+    console.log('in here:', this.props);
     return (
       <div className="HomePage">
         {movies && movies.map((movie, index) => {
           // console.log(movie)
           return (
-            <div key={index}>
+            <div key={index} className="card">
                 <Link to={{
                       pathname: `/movies/${index}`,
                       state: { movies: movie }

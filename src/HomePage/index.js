@@ -44,13 +44,14 @@ class HomePage extends Component {
     // let movies = this.state.movies.Search;
     console.log('returned:', this.state.movies.Search);
     return (
-      <div>
+      <div className="field has-addons">
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Search for Movie:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Find Movie" />
+          <div className="control">
+            <input className="input" type="text" placeholder="Find a movie" value={this.state.value} onChange={this.handleChange} />
+          </div>
+          <div className="control">
+            <input className="button is-primary" type="submit" value="Find Movie" />
+          </div>
         </form>
         <Movie data={this.state.movies.Search} />
       </div>

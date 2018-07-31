@@ -22,15 +22,16 @@ class Favorite extends Component {
   render() {
 
     return(
-      <div className="FavoritePage">
+      <div className="FavoritePage columns is-multiline">
       {this.state.favorites.map((favorite, index) => {
         return (
-          <div key={index}>
-            <p>{favorite.title}</p>
-            <p>{favorite.runtime}</p>
-            <p>{favorite.genre}</p>
-            <p>{favorite.rated}</p>
-            <p>{favorite.year}</p>
+          <div key={index} className="card column is-one-quarter-desktop is-half-tablet">
+            <p className="title is-4">{favorite.title}</p>
+            <p className="subtitle is-6">{favorite.runtime}</p>
+
+              <p>{favorite.genre}</p>
+              <p>{favorite.rated}</p>
+              <p>{favorite.year}</p>
           </div>
         )
       })}
