@@ -15,7 +15,9 @@
 
 - Include a README.md file in your repo with a link to your application deployed on Heroku.
 
-- Note: Heroku [link broken](https://react-backend-starter-code.herokuapp.com/) (probably due to env api key variables)
+- Note: Heroku [link broken](https://react-backend-starter-code.herokuapp.com/) possibly due to env api key variables (see logs below)
+
+![](heroku-errors-log.png)
 
 
 #### Bonus
