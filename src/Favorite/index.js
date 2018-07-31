@@ -12,7 +12,7 @@ class Favorite extends Component {
     fetch('/favorites.json')
       .then(response => response.json())
       .then(favorites => {
-        // console.log(favorites)
+        console.log(favorites)
         this.setState({
           favorites: favorites
         });
@@ -27,8 +27,10 @@ class Favorite extends Component {
         return (
           <div key={index}>
             <p>{favorite.title}</p>
+            <p>{favorite.runtime}</p>
             <p>{favorite.genre}</p>
             <p>{favorite.rated}</p>
+            <p>{favorite.year}</p>
           </div>
         )
       })}

@@ -9,16 +9,13 @@ class MoviePage extends Component {
 
       this.state = {
         id: 0,
-        title: "",
-        year: "",
-        rated: "",
-        runtime: "",
-        actors: "",
         genre: "",
         plot: "",
-        released: "",
         poster: "",
-        language: "",
+        rated: "",
+        runtime: "",
+        title: "",
+        year: "",
         isToggleOn: true,
         saved: false
       }
@@ -30,20 +27,26 @@ class MoviePage extends Component {
       console.log('this button was clicked');
 
       const favoriteMovie = {
-        id: this.state.id,
-        genre: this.state.genre,
-        rated: this.state.rated,
-        runtime: this.state.runtime,
-        title: this.state.title,
-        year: this.state.year
+        ...this.state
       }
 
-      console.log(favoriteMovie);
+      // take this movie and save it to the favorite database
+      console.log(typeof favoriteMovie);
 
-      this.setState({
-        favoriteMovie: favoriteMovie,
-        created: true
+      fetch('/favorites', {
+        method: 'POST',
+        body: JSON.stringify(favoriteMovie),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(this.state)
+      .then(favorites => {
+        this.setState({
+          favorites: favorites,
+          saved: true
+        })
       })
+
 
       this.setState(prevState => ({
         isToggleOn: !prevState.isToggleOn
@@ -61,16 +64,13 @@ class MoviePage extends Component {
         console.log(movie)
         this.setState({
           id: movie.imdbID,
-          title: movie.Title,
-          year: movie.Year,
-          rated: movie.Rated,
-          runtime: movie.Runtime,
-          actors: movie.Actors,
           genre: movie.Genre,
           plot: movie.Plot,
-          released: movie.Released,
           poster: movie.Poster,
-          language: movie.Language
+          rated: movie.Rated,
+          runtime: movie.Runtime,
+          title: movie.Title,
+          year: movie.Year
         });
       });
     }
@@ -89,7 +89,6 @@ class MoviePage extends Component {
             <p>Rated: {this.state.rated}</p>
             <p>Runtime: {this.state.runtime}</p>
             <p>Plot: {this.state.plot}</p>
-            <p>Language: {this.state.language}</p>
           </div>
           <button onClick={this.handleClick} >
             {this.state.isToggleOn ? 'ON' : 'OFF'}

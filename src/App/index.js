@@ -13,9 +13,8 @@ class App extends Component {
       <Router>
         <div className="main-wrapper">
           <nav className="navbar is-dark">
-
+              <Link className="navbar-item" to="/">Movie Finder</Link>
               <Link className="navbar-item" to="/favorites">Favorite Movies</Link>
-
           </nav>
           <Route path="/" exact component={HomePage} />
           <Route path="/movies/:id" exact component={MoviePage} />

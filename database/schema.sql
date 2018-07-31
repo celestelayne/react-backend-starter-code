@@ -8,11 +8,11 @@ DROP TABLE IF EXISTS favorites;
 
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY,
+  genre TEXT NOT NULL,
   title TEXT NOT NULL,
   year INT,
   rated TEXT NOT NULL,
   runtime TEXT NOT NULL,
-  genre TEXT NOT NULL
 );
 
 CREATE TABLE movies (

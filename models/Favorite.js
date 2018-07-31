@@ -7,7 +7,10 @@ Favorite.all = () => {
 }
 
 Favorite.create = favoriteMovie => {
-  return db.one(`INSERT INTO favorites (title, year, rated, runtime, actors, genre, plot, released, poster, language) VALUES($<title>, $<year>, $<rated>, $<runtime>, $<actors>, $<genre>, $<plot>, $<released>, $<poster>, $<language>) RETURNING *`, favoriteMovie);
+  return db.one(
+    `INSERT INTO
+    favorites(genre, rated, runtime, title, year)
+    VALUES($<genre>, $<rated>, $<runtime>, $<title>, $<year>) RETURNING id`, favoriteMovie);
 }
 
 module.exports = Favorite;
