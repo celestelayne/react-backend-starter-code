@@ -16,11 +16,11 @@ class Movie extends Component {
     let movies = this.props.data;
     console.log('in here:', this.props);
     return (
-      <div className="HomePage">
+      <section className="HomePage columns is-multiline">
         {movies && movies.map((movie, index) => {
-          // console.log(movie)
+          console.log(movie)
           return (
-            <div key={index} className="card">
+            <div key={index} className="card column is-one-quarter-desktop is-half-tablet">
                 <Link to={{
                       pathname: `/movies/${index}`,
                       state: { movies: movie }
@@ -33,7 +33,7 @@ class Movie extends Component {
           )
 
         })}
-      </div>
+      </section>
     );
   }
 }

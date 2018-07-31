@@ -56,7 +56,7 @@ class MoviePage extends Component {
     componentDidMount(){
       let id = this.props.location.state.movies.imdbID;
       // console.log(this.props.location.state.movies.imdbID)
-      let url =`http://www.omdbapi.com/?s=Troy&t=movie&apikey=4d9c54c4`;
+      let url =`http://www.omdbapi.com/?s=${this.state.value}&t=movie&apikey=4d9c54c4`;
 
       fetch(url)
       .then(response => response.json())
@@ -76,23 +76,20 @@ class MoviePage extends Component {
     }
 
     render() {
-      const movie = this.props;
+      const movie = this.props.location.state.movies;
       console.log(movie)
       return (
-        <div className="MoviePage">
-          <div className="movie-details">
+        <div className="MoviePage columns mobile">
+          <div className="movie-details column column is-three-fifths is-offset-one-fifth">
             <figure className="image is-square">
-              <img src={this.state.poster} alt={this.state.title} />
+              <img src={movie.Poster} alt={movie.Title} />
             </figure>
-            <h3>{this.state.title}</h3>
-            <p>Year: {this.state.year}</p>
-            <p>Rated: {this.state.rated}</p>
-            <p>Runtime: {this.state.runtime}</p>
-            <p>Plot: {this.state.plot}</p>
+            <h3>{movie.Title}</h3>
+            <p>Year: {movie.Year}</p>
+            <button className="button is-medium" onClick={this.handleClick} >
+              {this.state.isToggleOn ? 'Favorite' : 'OFF'}
+            </button>
           </div>
-          <button onClick={this.handleClick} >
-            {this.state.isToggleOn ? 'ON' : 'OFF'}
-          </button>
         </div>
       )
     }
